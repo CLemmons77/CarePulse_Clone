@@ -12,7 +12,7 @@ import CustomFormField, { FormFieldType } from "../CustomFormField";
 import SubmitButton from "../SubmitButton";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { GenderOptions } from "@/constants";
-import { Label } from "../ui/label";
+import { Label } from "@/components/ui/label";
 
 const RegisterForm = ({ user }: { user: User }) => {
   const router = useRouter();
@@ -109,7 +109,9 @@ const RegisterForm = ({ user }: { user: User }) => {
                   {GenderOptions.map((option) => (
                     <div key={option} className="radio-group">
                       <RadioGroupItem value={option} id={option}>
-                        <Label htmlFor={option} className="cursor-pointer"></Label>
+                        <Label htmlFor={option} className="cursor-pointer">
+                          {option}
+                        </Label>
                       </RadioGroupItem>
                     </div>
                   ))}
